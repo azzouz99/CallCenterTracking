@@ -1,9 +1,10 @@
 <?php
-require_once "../core/Model.php";
+namespace App\Models;  // Define the namespace
+
+use Core\Model;
+use PDO;
 
 class Task extends Model {
-    
-    // Get all tasks
     public function getAllTasks() {
         $stmt = $this->db->prepare("SELECT * FROM tasks ORDER BY created_at DESC");
         $stmt->execute();

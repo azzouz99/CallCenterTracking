@@ -1,9 +1,9 @@
 <?php
-$routes = [
-    "/" => "HomeController@index",
-    "/tasks" => "TaskController@index",
-    "/tasks/show/{id}" => "TaskController@show",
-    "/tasks/create" => "TaskController@store",
-    "/tasks/edit/{id}" => "TaskController@update",
-    "/tasks/delete/{id}" => "TaskController@delete"
+return [
+    "/" => "HomeController@index",  // ✅ Explicitly set root route
+    "login" => "LoginController@login",
+    "login/authenticate" => "LoginController@authenticate",
+    "logout" => "LoginController@logout",
+    "tasks" => "TaskController@index",
+    "menu" => "MenuController@index"
 ];

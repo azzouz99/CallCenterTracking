@@ -2,43 +2,58 @@
 namespace Core;
 
 class App {
-    protected $controller = "App\\Controllers\\HomeController"; // Use the full namespace
+    protected $controller = "App\\Controllers\\HomeController"; // Default controller
     protected $method = "index";
     protected $params = [];
 
     public function __construct() {
         $url = $this->parseUrl();
 
-        // Check if controller exists
-        if (!empty($url[0]) && file_exists("../app/controllers/" . ucfirst($url[0]) . ".php")) {
-            $this->controller = "App\\Controllers\\" . ucfirst($url[0]);
-            unset($url[0]);
+        // Load routes
+        $routes = require "../routes/web.php";
+
+        // Convert route array keys to remove starting "/"
+        $formattedRoutes = [];
+        foreach ($routes as $key => $value) {
+            $formattedRoutes[ltrim($key, "/")] = $value;
         }
 
-        // Load controller class
+
+
+        // Build route path
+        $path = implode("/", $url);
+
+        // Check if path exists in routes
+        if (isset($formattedRoutes[$path])) {
+            list($controller, $method) = explode("@", $formattedRoutes[$path]);
+            $this->controller = "App\\Controllers\\" . $controller;
+            $this->method = $method;
+        } else {
+            die("❌ Route Not Found: " . $path);
+        }
+
+
+
+        // Instantiate the controller
         if (class_exists($this->controller)) {
             $this->controller = new $this->controller;
         } else {
-            die("Controller not found: " . $this->controller);
+            die("❌ Controller Not Found: " . $this->controller);
         }
 
         // Check if method exists
-        if (isset($url[1]) && method_exists($this->controller, $url[1])) {
-            $this->method = $url[1];
-            unset($url[1]);
+        if (!method_exists($this->controller, $this->method)) {
+            die("❌ Method Not Found: " . $this->method);
         }
 
-        // Remaining values are parameters
-        $this->params = $url ? array_values($url) : [];
-
         // Call the method
-        call_user_func_array([$this->controller, $this->method], $this->params);
+        call_user_func([$this->controller, $this->method]);
     }
 
     private function parseUrl() {
         if (isset($_GET['url'])) {
             return explode("/", filter_var(rtrim($_GET['url'], "/"), FILTER_SANITIZE_URL));
         }
-        return ["HomeController"];
+        return ["home"];
     }
 }
