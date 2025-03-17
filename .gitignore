@@ -1,0 +1,37 @@
+
+# 🛠 Ignore system files
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+
+# 🚀 Ignore Composer dependencies (only if you plan to install them after cloning)
+vendor/
+
+# 🔑 Ignore sensitive files
+.env
+config/config.php
+
+# 🛠 Ignore temporary & cache files
+/public/uploads/
+public/temp/
+public/cache/
+storage/
+sessions/
+
+# 📌 Ignore IDE/editor config files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ⚡ Ignore compiled files
+*.class
+*.pyc
+*.o
+*.so
+
+# 🛠 Ignore debug & error logs
+error_log
+debug.log
+logs/
