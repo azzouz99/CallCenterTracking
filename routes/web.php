@@ -1,6 +1,6 @@
 <?php
 return [
-    "/" => "HomeController@index",  // ✅ Explicitly set root route
+    "/home" => "HomeController@index",  // ✅ Explicitly set root route
     "login" => "LoginController@login",
     "login/authenticate" => "LoginController@authenticate",
     "logout" => "LoginController@logout",
