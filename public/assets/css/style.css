@@ -1,52 +1,155 @@
-
-.dashboard {
-    padding: 20px;
-}
-
-.stats {
-    display: flex;
+/* Footer Styles */
+.main-footer {
+    background: white; /* Dark Blue Background */
+    color: #1b2a4e;
     justify-content: space-between;
-    margin-top: 20px;
-}
-
-.card {
-    background: #3498db;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 30%;
     text-align: center;
-}
-
-.charts {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-}
-
-.chart-container {
-    width: 48%;
-}
-
-.recent {
-    margin-top: 30px;
-}
-
-table {
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+  
     width: 100%;
-    border-collapse: collapse;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid #e0e0e0;
 }
 
-th, td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
+.main-footer p {
+    margin: 0;
+    font-size: 14px;
 }
+
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: #efefef; /* Light gray background */
+}
+
+.dashboard-container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background: #1b2a4e; /* Dark blue sidebar */
+    color: white;
+    padding: 80px 20px 20px 20px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar .profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+.sidebar nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding:10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.sidebar nav a:hover, .sidebar nav a.active {
+    background: #0f1c3f; /* Slightly darker blue on hover */
+}
+
+/* Main Content */
+.content {
+    margin-left: 250px;
+    padding: 80px 20px 20px; /* Adjusted padding to prevent content from being hidden under the header */
+    width: calc(100% - 250px);
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.user-options {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* Stats Cards */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    gap: 30px; /* Added space between cards */
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 23%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card i {
+    font-size: 30px;
+    color: #1abc9c;
+}
+
+/* Charts */
+.charts {
+    margin-top: 30px;
+    
+}
+
+.chart-full-width {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+
+.charts-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Added space between column & donut charts */
+    margin-top: 30px; /* Increased top margin */
+}
+
+.chart-container {
+    width: 48%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* HEADER STYLES */
@@ -54,14 +157,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #2c3e50;
-    color: white;
+    background: white;
+    color:  #0f1c3f;
     padding: 15px 20px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #e0e0e0;
 }
 
 /* Logo */
@@ -83,26 +188,19 @@ body {
     outline: none;
 }
 
-.search-bar button {
-    background: #1abc9c;
-    color: white;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-    margin-left: 5px;
-    border-radius: 5px;
-}
+
 
 /* NAVIGATION LINKS */
 .nav-links a {
-    color: white;
+    color: #1b2a4e;
     text-decoration: none;
     padding: 10px 15px;
     transition: 0.3s;
 }
 
 .nav-links a:hover {
-    background: #1abc9c;
+    background: #ba0101 !important;
+    color: white;
     border-radius: 5px;
 }
 

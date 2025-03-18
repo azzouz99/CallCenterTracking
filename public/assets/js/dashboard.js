@@ -1,22 +1,43 @@
-// Sample Data
-const agentData = {
-    labels: ["Agent 1", "Agent 2", "Agent 3", "Agent 4"],
-    datasets: [{
-        label: "Calls Handled",
-        data: [50, 40, 35, 60],
-        backgroundColor: ["#4CAF50", "#FFC107", "#2196F3", "#FF5722"]
-    }]
-};
+document.addEventListener("DOMContentLoaded", function() {
+    // Line Chart: Call Evolution
+    const callsEvolutionCtx = document.getElementById("callsEvolutionChart").getContext("2d");
+    new Chart(callsEvolutionCtx, {
+        type: "line",
+        data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            datasets: [{
+                label: "Total Calls",
+                data: [150, 200, 300, 400, 500, 600, 700, 800, 750, 650, 550, 400],
+                borderColor: "#3498db",
+                fill: false
+            }]
+        }
+    });
 
-const loanData = {
-    labels: ["Car Loan", "Home Loan", "Personal Loan"],
-    datasets: [{
-        label: "Follow-ups",
-        data: [30, 50, 20],
-        backgroundColor: ["#673AB7", "#FF9800", "#3F51B5"]
-    }]
-};
+    // Bar Chart: Agent Performance
+    const agentPerformanceCtx = document.getElementById("agentPerformanceChart").getContext("2d");
+    new Chart(agentPerformanceCtx, {
+        type: "bar",
+        data: {
+            labels: ["Agent 1", "Agent 2", "Agent 3", "Agent 4", "Agent 5"],
+            datasets: [{
+                label: "Calls Handled",
+                data: [50, 80, 60, 90, 70],
+                backgroundColor: "#1abc9c"
+            }]
+        }
+    });
 
-// Render Charts
-new Chart(document.getElementById("agentChart"), { type: "bar", data: agentData });
-new Chart(document.getElementById("loanChart"), { type: "pie", data: loanData });
+    // Donut Chart: Call Distribution
+    const callDistributionCtx = document.getElementById("callDistributionChart").getContext("2d");
+    new Chart(callDistributionCtx, {
+        type: "doughnut",
+        data: {
+            labels: ["Answered", "Missed", "Voicemail"],
+            datasets: [{
+                data: [75, 15, 10],
+                backgroundColor: ["#2ecc71", "#e74c3c", "#f1c40f"]
+            }]
+        }
+    });
+});
