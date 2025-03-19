@@ -6,5 +6,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
 
-# Ensure index.php loads automatically when visiting /
-DirectoryIndex index.php
+

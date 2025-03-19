@@ -7,6 +7,8 @@ class App {
     protected $params = [];
 
     public function __construct() {
+        // ✅ Start session to check user role
+
         $url = $this->parseUrl();
 
         // Load routes
@@ -18,8 +20,6 @@ class App {
             $formattedRoutes[ltrim($key, "/")] = $value;
         }
 
-
-
         // Build route path
         $path = implode("/", $url);
 
@@ -29,10 +29,16 @@ class App {
             $this->controller = "App\\Controllers\\" . $controller;
             $this->method = $method;
         } else {
-            die("❌ Route Not Found: " . $path);
+            // ✅ Redirect Based on User Role When Route Not Found
+            if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+                header("Location: menu"); // Admin → Menu
+            } elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
+                header("Location: home"); // User → Home
+            } else {
+                header("Location: login"); // Guest → Login
+            }
+            exit();
         }
-
-
 
         // Instantiate the controller
         if (class_exists($this->controller)) {

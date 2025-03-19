@@ -11,8 +11,8 @@
     <div class="login-container">
     <img src="public/assets/images/logo.svg" alt="BTL Logo">
   
-        <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
-        <form action="login/authenticate" method="POST">
+        <?php if (isset($_SESSION['error'])) echo "<p class='error'>".$_SESSION['error']."</p>"; ?>
+        <form action="login" method="POST">
         <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
