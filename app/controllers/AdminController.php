@@ -2,7 +2,7 @@
 namespace App\Controllers;
 
 use Core\Controller;
-class MenuController extends Controller {
+class AdminController extends Controller {
 
     public function __construct() {
         // Start the session
@@ -19,10 +19,10 @@ class MenuController extends Controller {
     }
 
     public function index() {
-        $this->view("menu/index");
+        $this->view("admin/index");
     }
 
     public function agents() {
-        $this->view("menu/agents");
+        $this->view("admin/agents");
     }
 }

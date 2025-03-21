@@ -31,7 +31,7 @@ class App {
         } else {
             // ✅ Redirect Based on User Role When Route Not Found
             if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
-                header("Location: menu"); // Admin → Menu
+                header("Location: admin"); // Admin → Menu
             } elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
                 header("Location: home"); // User → Home
             } else {

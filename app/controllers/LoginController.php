@@ -30,7 +30,7 @@ class LoginController extends Controller {
                 $_SESSION['role'] = $user['role'];
 
                 if ($user['role'] === "admin") {
-                    header("Location: menu");
+                    header("Location: admin");
                 } else {
                     header("Location: home");
                 }

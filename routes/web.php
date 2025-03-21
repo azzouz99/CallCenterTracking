@@ -5,6 +5,6 @@ return [
     "login/authenticate" => "LoginController@authenticate",
     "logout" => "LoginController@logout",
     "tasks" => "TaskController@index",
-    "menu" => "MenuController@index",
-    'agents'=>'MenuController@agents'
+    "admin" => "AdminController@index",
+    'agents'=>'AdminController@agents'
 ];
