@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
             datasets: [{
                 label: "Appels traités",
                 data: [50, 80, 60, 90, 70],
-                backgroundColor: "#1abc9c"
+                backgroundColor: "#bfe5b7"
             }]
         }
     });

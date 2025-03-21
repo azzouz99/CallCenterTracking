@@ -9,7 +9,7 @@
 /* Footer Styles */
 .main-footer {
     background: white; /* Dark Blue Background */
-    color: #1b2a4e;
+    color: #023F2D;
     justify-content: space-between;
     text-align: center;
     padding: 15px;
@@ -43,20 +43,16 @@ body {
 /* Sidebar */
 .sidebar {
     width: 200px;
-    background: #1b2a4e; /* Dark blue sidebar */
-    color: white;
-    padding: 80px 20px 20px 20px;
+    background: #023F2D; /* Dark blue sidebar */
+    color: rgb(28, 26, 26);
+    padding: 80px 20px 20px 0px;
     height: 100vh;
     position: fixed;
 }
 
-.sidebar .profile {
-    text-align: center;
-    margin-bottom: 20px;
-}
 
 .sidebar img {
-    width: 80px;
+    width: 40px;
     border-radius: 50%;
 }
 
@@ -71,7 +67,7 @@ body {
 }
 
 .sidebar nav a:hover, .sidebar nav a.active {
-    background: #0f1c3f; /* Slightly darker blue on hover */
+    background: #067554; /* Slightly darker blue on hover */
 }
 
 /* Main Content */
@@ -86,7 +82,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #1b2a4e;
+    background: #023F2D;
     padding: 10px 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -137,7 +133,7 @@ body {
 }
 .stat-card h2 {
     font-size: 20px;
-    color: #0f1c3f;
+    color: #023F2D;
 }
 
 /* Charts */
@@ -158,7 +154,7 @@ body {
 
 }
 .chart-full-width h3 {
-    background-color: #0f1c3f; /* Set background color */
+    background-color: #023F2D; /* Set background color */
     font-weight: bold;
     color: white; /* Change text color for contrast */
     text-align: center; /* Center the text */
@@ -191,7 +187,7 @@ body {
 /* .dashboard-container h3{
     text-align: center;
     font-weight: bold;
-    color: #0f1c3f;
+    color: #023F2D;
     font-family: Arial, sans-serif;
     letter-spacing: 2px;
 } */
@@ -223,7 +219,7 @@ body {
 }
 
 .chart-container h3 {
-    background-color: #0f1c3f; /* Title background */
+    background-color: #023F2D; /* Title background */
     color: white; /* Text color */
     text-align: center; /* Center text */
     padding: 12px 0; /* Adjust padding to control height */
@@ -240,7 +236,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background: white;
-    color:  #0f1c3f;
+    color:  #023F2D;
     padding: 15px 20px;
     position: fixed;
     width: 100%;
@@ -274,7 +270,7 @@ body {
 
 /* NAVIGATION LINKS */
 .nav-links a {
-    color: #1b2a4e;
+    color: #023F2D;
     text-decoration: none;
     padding: 10px 15px;
     transition: 0.3s;

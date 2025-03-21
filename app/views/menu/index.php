@@ -51,10 +51,53 @@
                     <canvas id="callDistributionChart"></canvas>
                 </div>
             </section>
-
+            <section class="charts">
+                <div class="chart-full-width">
+                <h3>Liste des Appels</h3>
+               
+            <table id="callsTable" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Call ID</th>
+                        <th>Phone Number</th>
+                        <th>Call Type</th>
+                        <th>State</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+                </div>
+            </section>
         </main>
     </div>
+    <script src="public/assets/js/jquery.min.js"></script>
+    <script src="public/assets/js/jquery.dataTables.min.js"></script>
     <script src="public/assets/js/chart.js"></script>
     <script src="public/assets/js/dashboard.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#callsTable').DataTable({
+                "ajax": "getCalls.php", // Fetch data from API
+                "columns": [
+                    { "data": "call_id" },
+                    { "data": "phone_number" },
+                    { "data": "call_type" },
+                    { "data": "state" },
+                    { "data": "date" }
+                ],
+                "processing": true,
+                "serverSide": false,
+                "paging": true,
+                "searching": true,
+                "info": true
+            });
+
+            // Refresh data every 10 seconds
+            setInterval(function() { 
+                $('#callsTable').DataTable().ajax.reload(null, false); 
+            }, 10000);
+        });
+    </script>
 
 <?php include '../app/views/includes/footer.php'; ?>

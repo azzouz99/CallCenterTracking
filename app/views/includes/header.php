@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="public/assets/css/style.css">
     
     <link rel="stylesheet" href="public/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/assets/css/jquery.dataTables.min.css">
 </head>
 <body>
     <header class="main-header">
